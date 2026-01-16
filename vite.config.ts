@@ -12,9 +12,10 @@ export default defineConfig({
             refresh: true,
         }),
         tailwindcss(),
-        wayfinder({
-            formVariants: true,
-        }),
+        !process.env.VERCEL &&
+            wayfinder({
+                formVariants: true,
+            }),
         vue({
             template: {
                 transformAssetUrls: {
