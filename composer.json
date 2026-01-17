@@ -89,7 +89,9 @@
         ],
         "vercel-build": [
             "npm run build",
-            "@php -r \"if (getenv('VERCEL_ENV') === 'production') { passthru('php artisan migrate --force'); } else { echo 'Skipping migrations (not production)'.PHP_EOL; }\""
+            "@php artisan config:clear",
+            "@php artisan cache:clear",
+            "@php artisan migrate --force"
         ]
     },
     "extra": {
