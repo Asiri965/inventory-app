@@ -87,11 +87,9 @@
         "pre-package-uninstall": [
             "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
         ],
-        "vercel-build": [
+        "vercel": [
             "npm run build",
-            "@php artisan config:clear",
-            "@php artisan cache:clear",
-            "@php artisan migrate --force"
+            "php artisan migrate --force"
         ]
     },
     "extra": {
