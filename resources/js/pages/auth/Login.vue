@@ -22,6 +22,7 @@ defineProps<{
 
 <template>
     <AuthBase
+        class="bg-[#e8f8ff]"
         title="Log in to your account"
         description="Enter your email and password below to log in"
     >
@@ -89,7 +90,7 @@ defineProps<{
 
                 <Button
                     type="submit"
-                    class="mt-4 w-full"
+                    class="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                     :tabindex="4"
                     :disabled="processing"
                     data-test="login-button"
@@ -99,10 +100,7 @@ defineProps<{
                 </Button>
             </div>
 
-            <div
-                class="text-center text-sm text-muted-foreground"
-                v-if="canRegister"
-            >
+            <div class="text-center text-sm/6 text-gray-400" v-if="canRegister">
                 Don't have an account?
                 <TextLink :href="register()" :tabindex="5">Sign up</TextLink>
             </div>

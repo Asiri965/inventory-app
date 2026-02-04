@@ -54,7 +54,7 @@ withDefaults(
                 class="flex w-full flex-col-reverse overflow-hidden rounded-lg lg:max-w-7xl lg:flex-row"
             >
                 <div
-                    class=" justify-center items-center rounded-br-lg rounded-bl-lg p-6 pb-12 text-[13px] leading-[20px] lg:p-10 lg:pt-20"
+                    class="items-center justify-center rounded-br-lg rounded-bl-lg p-6 pb-12 text-[13px] leading-[20px] lg:p-10 lg:pt-20"
                 >
                     <span
                         data-aos="fade-right"
@@ -65,8 +65,7 @@ withDefaults(
                     <h1
                         class="text-[2.5rem] leading-tight font-bold capitalize sm:pr-8 sm:text-5xl xl:pr-10 xl:text-6xl"
                     >
-                        Full
-                        <span class="text-header-gradient">Featured</span>
+                        <span class="text-header-gradient">Simple</span>
                         Inventory Web App
                     </h1>
                     <p
@@ -75,10 +74,57 @@ withDefaults(
                         data-aos-delay="300"
                         class="paragraph hidden text-base leading-relaxed text-[#444444] sm:block sm:pr-8 xl:pr-10"
                     >
-                        Buy and sell 200+ cryptocurrencies with 20+ flat
-                        currencies using bank transfers or your credit/debit
-                        card.
+                        Track your stock, manage products, and stay in control —
+                        all in one easy dashboard.
                     </p>
+                    <ul
+                        class="text-body my-6 flex max-w-full list-inside space-y-1 lg:flex-row"
+                    >
+                        <li
+                            class="mr-6 flex items-center space-x-3 rtl:space-x-reverse"
+                        >
+                            <svg
+                                class="text-fg-success me-1.5 h-4 w-4 shrink-0"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                />
+                            </svg>
+                            Add Products
+                        </li>
+                        <li
+                            class="mr-6 flex items-center space-x-3 rtl:space-x-reverse"
+                        >
+                            <svg
+                                class="text-fg-success me-1.5 h-4 w-4 shrink-0"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                />
+                            </svg>
+                            Track Stock
+                        </li>
+                    </ul>
                     <div
                         data-aos="fade-up"
                         data-aos-once="true"
@@ -105,16 +151,13 @@ withDefaults(
                     data-aos="flip-down"
                     class="text-2xl font-semibold text-neutral-800"
                 >
-                    Trusted Partners Worldwide
+                    Trusted by Businesses in Sri Lanka
                 </h3>
                 <p data-aos="flip-down" class="paragraph">
-                    We're partners with countless major organisations around the
-                    globe
+                    Used by small and medium businesses to manage inventory
+                    faster, reduce losses, and improve daily operations.
                 </p>
-                <div
-                    data-aos="fade-up"
-                    class="flex flex-wrap items-center justify-center"
-                >
+                <div data-aos="fade-up" class="flex flex-wrap">
                     <div>
                         <img
                             src="img/partner/clever.png"
@@ -158,39 +201,56 @@ withDefaults(
                     class="col-span-12 mt-8 space-y-8 px-4 sm:space-y-6 sm:px-6 lg:col-span-6"
                 >
                     <h2 class="text-4xl font-semibold">
-                        Advanced Trading
+                        Inventory Management
                         <span class="text-header-gradient">Tools</span>
                     </h2>
                     <div class="space-y-2">
                         <h4 class="text-lg font-medium">
-                            Professional Access, Non-stop Availability
+                            Powerful Inventory Tools
                         </h4>
                         <p class="paragraph text-sm xl:text-base">
-                            We provide premium access to crypto trading for both
-                            individuals and institutions through high liquidity,
-                            reliable order execution and constant uptime.
+                            Everything you need to manage stock easily — no
+                            complicated systems.
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-medium">Product Management</h4>
+                        <p class="paragraph text-sm xl:text-base">
+                            Create and organize items with SKU, category, price,
+                            supplier, and stock quantity.
                         </p>
                     </div>
                     <div class="space-y-2">
                         <h4 class="text-lg font-medium">
-                            A Range of Powerful Apis
+                            Stock In / Stock Out Tracking
                         </h4>
                         <p class="paragraph text-sm xl:text-base">
-                            Set up your own trading interface or deploy your
-                            algorithmic strategy with our high-performance FIX
-                            and HTTP APIs. Connect to our WebSocket for
-                            real-time data streaming.
+                            Update inventory instantly when items are received
+                            or sold.
                         </p>
                     </div>
                     <div class="space-y-2">
-                        <h4 class="text-lg font-medium">Customer Support</h4>
+                        <h4 class="text-lg font-medium">Low Stock Alerts</h4>
                         <p class="paragraph text-sm xl:text-base">
-                            Premium 24/7 support available to all customers
-                            worldwide by phone or email. Dedicated account
-                            managers for partners.
+                            Get notified when an item is running low so you
+                            never run out unexpectedly.
                         </p>
                     </div>
-                    <div class="flex flex-col sm:flex-row">
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-medium">Reports & Export</h4>
+                        <p class="paragraph text-sm xl:text-base">
+                            Generate stock reports and export to Excel or PDF
+                            whenever needed.
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-medium">Multi-User Access</h4>
+                        <p class="paragraph text-sm xl:text-base">
+                            Allow staff members to use the system with
+                            role-based permissions.
+                        </p>
+                    </div>
+                    <!-- <div class="flex flex-col sm:flex-row">
                         <button
                             class="text-gradient rounded-full border border-[#4A8FF6] bg-inherit px-10 py-4 text-center text-base text-sm transition duration-300 hover:shadow-md hover:shadow-[#0c66ee]/50"
                         >
@@ -201,7 +261,7 @@ withDefaults(
                         >
                             Contact
                         </button>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="col-span-12 lg:col-span-6">
@@ -215,6 +275,7 @@ withDefaults(
                 </div>
             </div>
         </section>
+
         <!-- Industry-leading security section -->
         <section class="my-5 w-full">
             <div
@@ -234,52 +295,163 @@ withDefaults(
                     class="col-span-12 mt-8 space-y-8 sm:space-y-6 lg:col-span-5 xl:px-8"
                 >
                     <h2 class="text-4xl font-semibold">
-                        Industry-leading security from day one
+                        Designed for Speed and Simplicity
                     </h2>
+                    <p>
+                        Our system is built to be beginner-friendly but powerful
+                        enough for business use.
+                    </p>
                     <ul class="space-y-8 sm:space-y-4">
                         <li class="space-y-2">
                             <div class="flex items-center space-x-2">
-                                <span>Safety, security and compliance</span>
+                                <svg
+                                    class="text-fg-success me-1.5 h-4 w-4 shrink-0"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                    />
+                                </svg>
+                                <span>Easy to use dashboard </span>
                             </div>
-                            <p class="text-sm leading-relaxed text-gray-700">
-                                NEFA is a licensed New York trust company that
-                                undergoes regular bank exams and is subject to
-                                the cybersecurity audits conducted by the New
-                                York Department of Financial Services.
-                                <span class="underline">Learn more</span> about
-                                our commitment to security.
-                            </p>
                         </li>
                         <li class="space-y-2">
                             <div class="flex items-center space-x-2">
-                                <span>Hardware security keys</span>
+                                <svg
+                                    class="text-fg-success me-1.5 h-4 w-4 shrink-0"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                    />
+                                </svg>
+                                <span
+                                    >Works on laptop, mobile, and tablet
+                                </span>
                             </div>
-                            <p class="text-sm leading-relaxed text-gray-700">
-                                With NEFA you can secure your account with a
-                                hardware security key via WebAuthn.
-                            </p>
                         </li>
                         <li class="space-y-2">
                             <div class="flex items-center space-x-2">
-                                <span>SOC Certifications</span>
+                                <svg
+                                    class="text-fg-success me-1.5 h-4 w-4 shrink-0"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                    />
+                                </svg>
+                                <span>Secure login & protected data</span>
                             </div>
-                            <p class="text-sm leading-relaxed text-gray-700">
-                                NEFA is
-                                <span class="underline">SOC 1 Type 2</span> and
-                                <span class="underline">SOC 2 Type 2</span>
-                                compliant. We are the world’s first
-                                cryptocurrency exchange and custodian to
-                                complete these exams.
-                            </p>
+                        </li>
+                        <li class="space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <svg
+                                    class="text-fg-success me-1.5 h-4 w-4 shrink-0"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                    />
+                                </svg>
+                                <span>Fast setup and quick training</span>
+                            </div>
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
-        <footer class="mx-auto mt-auto w-full max-w-screen-xl px-8">
+        <!-- Advanced trading tools section -->
+        <!-- <section
+            class="bg-partner relative max-w-full overflow-hidden shadow sm:mx-6 sm:rounded-2xl"
+        >
+            <div
+                class="flex w-full flex-col items-center justify-center space-y-4 px-6 py-16 text-center sm:px-0"
+            > -->
+        <section
+            class="bg-trading-tools max-w-full overflow-hidden rounded-2xl bg-[#4A8FF6] py-16 shadow sm:mx-4"
+        >
+            <div
+                class="flex w-full flex-col items-center justify-center space-y-4 px-6 py-16 text-center sm:px-0"
+            >
+                <div
+                    data-aos="fade-right"
+                    class="col-span-12 mt-8 space-y-8 px-4 text-center sm:space-y-6 sm:px-6 lg:col-span-6"
+                >
+                    <h2 class="text-4xl font-semibold">
+                        Start Managing Inventory the
+                        <span class="text-header-gradient">Smart Way</span>
+                    </h2>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-medium">
+                            Stop using notebooks and messy spreadsheets. Move
+                            your inventory to a simple online system today.
+                        </h4>
+                    </div>
+                    <div class="flex w-full items-center justify-center">
+                        <button
+                            class="text-gradient mr-5 rounded-full border border-[#4A8FF6] bg-[#4A8FF6] px-10 py-4 text-center text-base text-sm text-white transition duration-300 hover:shadow-md hover:shadow-[#0c66ee]/50"
+                        >
+                            Request a Demo
+                        </button>
+                        <button
+                            class="text-gradient rounded-full border border-[#4A8FF6] bg-inherit px-10 py-4 text-center text-base text-sm transition duration-300 hover:shadow-md hover:shadow-[#0c66ee]/50"
+                        >
+                            Contact Our Team
+                        </button>
+                    </div>
+                </div>
+
+                <!-- <div class="col-span-12 lg:col-span-6">
+                    <div class="w-full sm:mt-20 xl:mt-0">
+                        <img
+                            src="img/advanced-trading-tools.webp"
+                            class="w-full"
+                            alt=""
+                        />
+                    </div>
+                </div> -->
+            </div>
+        </section>
+        <footer class="mx-auto mt-auto w-full max-w-screen-xl px-2">
             <div class="w-full border-y border-[#DDDDDD]"></div>
             <div
-                class="py-8 text-center text-sm text-[#666666] hover:text-gray-900 sm:py-4"
+                class="text-center text-sm text-[#666666] hover:text-gray-900 sm:py-4"
             >
                 &copy; Copyright 2025 Mentra Labs. All rights reserved
             </div>

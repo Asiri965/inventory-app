@@ -14,6 +14,7 @@ import { store } from '@/routes/register';
 
 <template>
     <AuthBase
+        class="bg-[#e8f8ff]"
         title="Create an account"
         description="Enter your details below to create your account"
     >
@@ -85,7 +86,7 @@ import { store } from '@/routes/register';
 
                 <Button
                     type="submit"
-                    class="mt-2 w-full"
+                    class="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                     tabindex="5"
                     :disabled="processing"
                     data-test="register-user-button"

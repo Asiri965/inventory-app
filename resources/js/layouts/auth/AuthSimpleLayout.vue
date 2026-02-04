@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
 
-import AppLogoIcon from '@/components/AppLogoIcon.vue';
 import { home } from '@/routes';
 
 defineProps<{
@@ -12,27 +11,33 @@ defineProps<{
 
 <template>
     <div
-        class="flex min-h-svh flex-col items-center justify-center gap-6 bg-background p-6 md:p-10"
+        class="flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10"
     >
         <div class="w-full max-w-sm">
             <div class="flex flex-col gap-8">
-                <div class="flex flex-col items-center gap-4">
-                    <Link
-                        :href="home()"
-                        class="flex flex-col items-center gap-2 font-medium"
-                    >
-                        <div
-                            class="mb-1 flex h-9 w-9 items-center justify-center rounded-md"
+                <div
+                    class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8"
+                >
+                    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+                        <Link
+                            :href="home()"
+                            class="flex flex-col items-center gap-2 font-medium"
                         >
-                            <AppLogoIcon
-                                class="size-9 fill-current text-[var(--foreground)] dark:text-white"
+                            <img
+                                class="mx-auto h-10 w-auto"
+                                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                                alt="Your Company"
                             />
-                        </div>
-                        <span class="sr-only">{{ title }}</span>
-                    </Link>
-                    <div class="space-y-2 text-center">
-                        <h1 class="text-xl font-medium">{{ title }}</h1>
-                        <p class="text-center text-sm text-muted-foreground">
+                            <span class="sr-only">{{ title }}</span>
+                        </Link>
+                        <h2
+                            class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-black"
+                        >
+                            {{ title }}
+                        </h2>
+                        <p
+                            class="mt-2 text-center text-sm text-black text-muted"
+                        >
                             {{ description }}
                         </p>
                     </div>
