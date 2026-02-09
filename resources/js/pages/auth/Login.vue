@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import { Form, Head } from '@inertiajs/vue3';
+import { Form, Head, Link } from '@inertiajs/vue3';
 
 import InputError from '@/components/InputError.vue';
 import TextLink from '@/components/TextLink.vue';
-import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Spinner } from '@/components/ui/spinner';
-import AuthBase from '@/layouts/AuthLayout.vue';
+import GuestLayout from '@/layouts/GuestLayout.vue';
 import { register } from '@/routes';
 import { store } from '@/routes/login';
 import { request } from '@/routes/password';
@@ -21,12 +19,21 @@ defineProps<{
 </script>
 
 <template>
-    <AuthBase
+    <!-- <AuthBase
         class="bg-[#e8f8ff]"
         title="Log in to your account"
         description="Enter your email and password below to log in"
-    >
+    > -->
+    <GuestLayout>
         <Head title="Log in" />
+
+        <!-- Header -->
+        <div class="mb-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900">Welcome back</h2>
+            <p class="mt-2 text-gray-600">
+                Sign in to your account to continue
+            </p>
+        </div>
 
         <div
             v-if="status"
@@ -88,22 +95,73 @@ defineProps<{
                     </Label>
                 </div>
 
-                <Button
+                <!-- Submit Button -->
+                <button
                     type="submit"
-                    class="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-                    :tabindex="4"
                     :disabled="processing"
-                    data-test="login-button"
+                    class="flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-4 py-3 font-semibold text-white shadow-lg shadow-indigo-500/30 transition-all duration-200 hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                    <Spinner v-if="processing" />
-                    Log in
-                </Button>
+                    <svg
+                        v-if="processing"
+                        class="h-5 w-5 animate-spin"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                    >
+                        <circle
+                            class="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            stroke-width="4"
+                        ></circle>
+                        <path
+                            class="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                    </svg>
+                    <span>{{ processing ? 'Signing in...' : 'Sign In' }}</span>
+                </button>
             </div>
 
-            <div class="text-center text-sm/6 text-gray-400" v-if="canRegister">
-                Don't have an account?
-                <TextLink :href="register()" :tabindex="5">Sign up</TextLink>
-            </div>
+            
         </Form>
-    </AuthBase>
+        <!-- Divider -->
+        <div class="relative my-8">
+            <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-gray-200"></div>
+            </div>
+            <div class="relative flex justify-center text-sm">
+                <span class="bg-white px-4 text-gray-500"
+                    >New to Inventory Manager?</span
+                >
+            </div>
+        </div>
+
+        <!-- Register Link -->
+        <div class="text-center text-sm/6 text-gray-400" v-if="canRegister">
+            <Link
+                :href="register()"
+                class="flex w-full items-center justify-center gap-2 rounded-xl bg-gray-100 px-4 py-3 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-200"
+            >
+                <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                    />
+                </svg>
+                Create an Account
+            </Link>
+        </div>
+
+        <!-- </AuthBase> -->
+    </GuestLayout>
 </template>

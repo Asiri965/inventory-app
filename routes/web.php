@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
@@ -11,6 +12,11 @@ use Laravel\Fortify\Features;
 //         'canRegister' => Features::enabled(Features::registration()),
 //     ]);
 // })->name('home');
+
+// Route::get('/dashboard', [DashboardController::class, 'index'])
+//     ->middleware(['auth', 'verified'])
+//     ->name('dashboard');
+
 
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');

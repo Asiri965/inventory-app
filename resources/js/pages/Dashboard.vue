@@ -1,49 +1,76 @@
-<script setup lang="ts">
+<script setup>
+import AuthenticatedLayout from '@/layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
-
-import AppLayout from '@/layouts/AppLayout.vue';
-import { dashboard } from '@/routes';
-import { type BreadcrumbItem } from '@/types';
-
-import PlaceholderPattern from '../components/PlaceholderPattern.vue';
-
-const breadcrumbs: BreadcrumbItem[] = [
-    {
-        title: 'Dashboard',
-        href: dashboard().url,
-    },
-];
 </script>
 
 <template>
     <Head title="Dashboard" />
-
-    <AppLayout :breadcrumbs="breadcrumbs">
-        <div
-            class="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4"
-        >
-            <div class="grid auto-rows-min gap-4 md:grid-cols-3">
-                <div
-                    class="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border"
-                >
-                    <PlaceholderPattern />
-                </div>
-                <div
-                    class="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border"
-                >
-                    <PlaceholderPattern />
-                </div>
-                <div
-                    class="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border"
-                >
-                    <PlaceholderPattern />
-                </div>
-            </div>
-            <div
-                class="relative min-h-[100vh] flex-1 rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border"
+    <AuthenticatedLayout>
+        <template #header>
+            <h1 class="text-2xl font-bold text-gray-900">Dashboard</h1>
+        </template>
+        <!-- Quick Actions FAB -->
+        <div class="fixed right-8 bottom-8 flex flex-col gap-3">
+            <Link
+                :href="route('inventory.add')"
+                class="flex h-14 w-14 transform items-center justify-center rounded-full bg-green-600 text-white shadow-lg transition-all duration-200 hover:scale-110 hover:bg-green-700 hover:shadow-xl"
+                title="Add Stock"
+                tooltip="Add Stock"
             >
-                <PlaceholderPattern />
-            </div>
+                <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M7 11l5-5m0 0l5 5m-5-5v12"
+                    />
+                </svg>
+            </Link>
+            <Link
+                :href="route('inventory.deduct')"
+                class="flex h-14 w-14 transform items-center justify-center rounded-full bg-orange-500 text-white shadow-lg transition-all duration-200 hover:scale-110 hover:bg-orange-600 hover:shadow-xl"
+                title="Deduct Stock"
+                tooltip="Deduct Stock"
+            >
+                <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 13l-5 5m0 0l-5-5m5 5V6"
+                    />
+                </svg>
+            </Link>
+
+            <!-- <Link
+                :href="route('inventory.create')"
+                class="flex h-14 w-14 transform items-center justify-center rounded-full bg-indigo-600 text-white shadow-lg transition-all duration-200 hover:scale-110 hover:bg-indigo-700 hover:shadow-xl"
+                title="Add Items"
+            >
+                <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                    />
+                </svg>
+            </Link> -->
         </div>
-    </AppLayout>
+    </AuthenticatedLayout>
 </template>
