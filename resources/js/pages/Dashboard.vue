@@ -33,7 +33,7 @@ import { Head } from '@inertiajs/vue3';
             </Link>
             <Link
                 :href="route('inventory.deduct')"
-                class="flex h-14 w-14 transform items-center justify-center rounded-full bg-orange-500 text-white shadow-lg transition-all duration-200 hover:scale-110 hover:bg-orange-600 hover:shadow-xl"
+                class="flex h-14 w-14 transform items-center justify-center rounded-full bg-red-500 text-white shadow-lg transition-all duration-200 hover:scale-110 hover:bg-red-600 hover:shadow-xl"
                 title="Deduct Stock"
                 tooltip="Deduct Stock"
             >
@@ -52,9 +52,9 @@ import { Head } from '@inertiajs/vue3';
                 </svg>
             </Link>
 
-            <!-- <Link
-                :href="route('inventory.create')"
-                class="flex h-14 w-14 transform items-center justify-center rounded-full bg-indigo-600 text-white shadow-lg transition-all duration-200 hover:scale-110 hover:bg-indigo-700 hover:shadow-xl"
+            <Link
+                :href="route('inventory.add')"
+                class="flex h-14 w-14 transform items-center justify-center rounded-full bg-purple-600 text-white shadow-lg transition-all duration-200 hover:scale-110 hover:bg-purple-700 hover:shadow-xl"
                 title="Add Items"
             >
                 <svg
@@ -70,7 +70,7 @@ import { Head } from '@inertiajs/vue3';
                         d="M12 6v6m0 0v6m0-6h6m-6 0H6"
                     />
                 </svg>
-            </Link> -->
+            </Link>
         </div>
     </AuthenticatedLayout>
 </template>

@@ -45,7 +45,7 @@ const quickActions = [
         name: 'Add Items',
         href: 'inventory.add',
         icon: 'M12 6v6m0 0v6m0-6h6m-6 0H6',
-        color: 'bg-indigo-600 hover:bg-indigo-700',
+        color: 'bg-orange-500 hover:bg-orange-600',
     },
     {
         name: 'Add Stock',
@@ -57,7 +57,7 @@ const quickActions = [
         name: 'Deduct Stock',
         href: 'inventory.deduct',
         icon: 'M17 13l-5 5m0 0l-5-5m5 5V6',
-        color: 'bg-orange-500 hover:bg-orange-600',
+        color: 'bg-red-500 hover:bg-red-600',
     },
 ];
 
@@ -103,13 +103,13 @@ const isActive = (pattern) => {
         >
             <div
                 v-if="sidebarOpen"
-                class="fixed inset-y-0 left-0 z-50 w-72 bg-indigo-700 lg:hidden"
+                class="fixed inset-y-0 left-0 z-50 w-72 bg-purple-700 lg:hidden"
             >
                 <div class="flex h-16 items-center justify-between px-6">
                     <span class="text-xl font-bold text-white">Inventory</span>
                     <button
                         @click="sidebarOpen = false"
-                        class="text-indigo-200 hover:text-white"
+                        class="text-purple-200 hover:text-white"
                     >
                         <svg
                             class="h-6 w-6"
@@ -130,12 +130,12 @@ const isActive = (pattern) => {
                     <Link
                         v-for="item in navigation"
                         :key="item"
-                        :href="item.href"
+                        :href="route(item.href)"
                         class="mb-2 flex items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200"
                         :class="
                             isActive(item.current)
-                                ? 'bg-indigo-800 text-white'
-                                : 'text-indigo-100 hover:bg-indigo-600'
+                                ? 'bg-purple-800 text-white'
+                                : 'text-purple-100 hover:bg-purple-600'
                         "
                     >
                         <svg
@@ -162,7 +162,7 @@ const isActive = (pattern) => {
             class="hidden lg:fixed lg:inset-y-0 lg:z-40 lg:flex lg:w-72 lg:flex-col"
         >
             <div
-                class="flex grow flex-col gap-y-5 overflow-y-auto bg-indigo-700 px-6 pb-4"
+                class="flex grow flex-col gap-y-5 overflow-y-auto bg-purple-500 px-6 pb-4"
             >
                 <!-- Logo -->
                 <div class="flex h-16 items-center">
@@ -171,10 +171,10 @@ const isActive = (pattern) => {
                         class="flex items-center gap-3"
                     >
                         <div
-                            class="flex h-10 w-10 items-center justify-center rounded-lg bg-white"
+                            class="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-600"
                         >
                             <svg
-                                class="h-6 w-6 text-indigo-700"
+                                class="h-6 w-6 text-white"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -188,7 +188,7 @@ const isActive = (pattern) => {
                             </svg>
                         </div>
                         <span class="text-xl font-bold text-white"
-                            >Inventory</span
+                            >Inventory App</span
                         >
                     </Link>
                 </div>
@@ -202,8 +202,8 @@ const isActive = (pattern) => {
                                 class="flex items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200"
                                 :class="
                                     isActive(item.current)
-                                        ? 'bg-indigo-800 text-white shadow-lg'
-                                        : 'text-indigo-100 hover:bg-indigo-600'
+                                        ? 'bg-purple-600 text-white shadow-lg'
+                                        : 'text-purple-100 hover:bg-purple-600'
                                 "
                             >
                                 <svg
@@ -226,7 +226,7 @@ const isActive = (pattern) => {
                         <!-- Quick Actions -->
                         <li class="mt-6">
                             <div
-                                class="mb-3 px-4 text-xs font-semibold tracking-wider text-indigo-200 uppercase"
+                                class="mb-3 px-4 text-xs font-semibold tracking-wider text-purple-200 uppercase"
                             >
                                 Quick Actions
                             </div>
@@ -258,12 +258,12 @@ const isActive = (pattern) => {
 
                         <!-- User Profile at bottom -->
                         <li class="mt-auto">
-                            <div class="border-t border-indigo-600 pt-4">
+                            <div class="border-t border-purple-400 pt-4">
                                 <div
-                                    class="flex items-center gap-3 rounded-lg px-4 py-3 transition-colors hover:bg-indigo-600"
+                                    class="flex items-center gap-3 rounded-lg px-4 py-3 transition-colors hover:bg-purple-600"
                                 >
                                     <div
-                                        class="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-500"
+                                        class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500"
                                     >
                                         <span
                                             class="text-sm font-semibold text-white"
