@@ -15,7 +15,7 @@ class DashboardController extends Controller
 
         $totalStock = Item::sum('quantity');
 
-        $lowStockItems = Item::select('id', 'name', 'quantity')
+        $lowStockItems = Item::select('id', 'name', 'unit', 'quantity')
             ->where('quantity', '<', 10)
             ->where('quantity', '>', 0)
             ->orderBy('quantity')
@@ -41,7 +41,6 @@ class DashboardController extends Controller
             ],
             'lowStockItems' => $lowStockItems,
             'recentTransactions' => $recentTransactions,
-            'totalItems' => $totalItems,
         ]);
     }
 }

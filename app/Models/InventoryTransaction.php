@@ -29,7 +29,16 @@ class InventoryTransaction extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,);
     }
-} {
+
+    public function isAddition(): bool
+    {
+        return $this->type === 'add';
+    }
+
+    public function isDeduction(): bool
+    {
+        return $this->type === 'deduct';
+    }
 }

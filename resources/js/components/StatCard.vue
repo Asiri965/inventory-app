@@ -54,7 +54,9 @@ const colorClasses = {
                 >
                     {{ title }}
                 </p>
-                <p class="mt-2 text-3xl font-bold text-gray-900">{{ value }}</p>
+                <p class="mt-2 text-3xl font-bold text-gray-900">
+                    {{ value }}
+                </p>
                 <p v-if="trend" class="mt-2 flex items-center text-sm">
                     <span
                         :class="
