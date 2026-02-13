@@ -162,7 +162,7 @@ const isActive = (pattern) => {
             class="hidden lg:fixed lg:inset-y-0 lg:z-40 lg:flex lg:w-72 lg:flex-col"
         >
             <div
-                class="flex grow flex-col gap-y-5 overflow-y-auto bg-purple-500 px-6 pb-4"
+                class="flex grow flex-col gap-y-5 overflow-y-auto bg-purple-900 px-6 pb-4"
             >
                 <!-- Logo -->
                 <div class="flex h-16 items-center">
