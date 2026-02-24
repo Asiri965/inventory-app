@@ -75,7 +75,7 @@ const getTimeAgo = (dateString) => {
             <!-- Total Stock -->
             <StatCard
                 title="Total Stock"
-                :value="parseFloat(stats.totalStock)"
+                :value="stats.totalStock"
                 color="teal"
             >
                 <template #icon>
@@ -83,14 +83,25 @@ const getTimeAgo = (dateString) => {
                         class="h-8 w-8 text-teal-600"
                         fill="none"
                         stroke="currentColor"
-                        viewBox="0 0 24 24"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
                     >
-                        <path
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                            id="SVGRepo_tracerCarrier"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
-                        />
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M18 5.65l-8-3.555L2 5.65V19H0V5c0-.396.232-.753.594-.913l9-4a.999.999 0 01.812 0l9 4A1 1 0 0120 5v14h-2V5.65z"
+                                fill="currentColor"
+                            ></path>
+                            <path
+                                d="M9 15a.997.997 0 01-.707-.293l-2-2a1 1 0 011.414-1.414L9 12.586l3.293-3.293a1 1 0 111.414 1.415l-4 4A.999.999 0 019 15z"
+                                fill="currentColor"
+                            ></path>
+                        </g>
                     </svg>
                 </template>
             </StatCard>
@@ -159,7 +170,7 @@ const getTimeAgo = (dateString) => {
 
                 <div v-if="lowStockItems.length === 0" class="py-8 text-center">
                     <svg
-                        class="mx-auto mb-3 h-12 w-12 text-green-400"
+                        class="mx-auto mb-3 h-12 w-12 text-purple-200"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"

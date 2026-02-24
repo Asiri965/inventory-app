@@ -14,6 +14,6 @@ class Item extends Model
 
     public function transactions()
     {
-        return $this->hasMany(InventoryTransaction::class);
+        return $this->hasMany(InventoryTransaction::class)->orderBy('created_at', 'desc');
     }
 }
