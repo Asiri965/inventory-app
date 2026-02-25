@@ -34,16 +34,16 @@ const navigation = [
     },
     {
         name: 'Inventory',
-        href: 'items.index',
+        href: 'inventory.index',
         icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
-        current: 'items.*',
+        current: 'inventory.*',
     },
 ];
 
 const quickActions = [
     {
         name: 'Add Items',
-        href: 'items.add',
+        href: 'inventory.create',
         icon: 'M12 6v6m0 0v6m0-6h6m-6 0H6',
         color: 'bg-orange-500 hover:bg-orange-600',
     },

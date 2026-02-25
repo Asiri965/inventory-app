@@ -81,7 +81,7 @@ const submit = () => {
         <template #header>
             <div class="flex items-center gap-4">
                 <Link
-                    :href="route('dashboard')"
+                    :href="route('inventory.index')"
                     class="rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600"
                 >
                     <svg

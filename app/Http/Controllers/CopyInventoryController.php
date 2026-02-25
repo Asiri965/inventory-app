@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AddInventoryRequest;
 use App\Http\Requests\DeductInventoryRequest;
-use App\Http\Requests\StoreInventoryRequest;
+use App\Http\Requests\Inventory\StoreAdditionRequest;
+use App\Http\Requests\Inventory\StoreDeductionRequest;
 use App\Models\Item;
 use App\Services\InventoryService;
 use Illuminate\Http\RedirectResponse;
@@ -13,11 +14,8 @@ use Inertia\Inertia;
 
 class InventoryController extends Controller
 {
-
     public function __construct(private InventoryService $inventory) {}
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index(Request $request)
     {
         $search = trim((string) $request->get('search', ''));
@@ -34,35 +32,6 @@ class InventoryController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        $units = [
-            ['id' => 1, 'name' => 'kg'],
-            ['id' => 2, 'name' => 'g'],
-            ['id' => 3, 'name' => 'm'],
-            ['id' => 4, 'name' => 'cm'],
-            ['id' => 5, 'name' => 'pcs'],
-            ['id' => 6, 'name' => 'L'],
-            ['id' => 7, 'name' => 'mL'],
-            ['id' => 8, 'name' => 'box'],
-            ['id' => 9, 'name' => 'dz'],
-        ];
-        return Inertia::render('Items/AddItem', [
-            'units' => $units,
-        ]);
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store() {}
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Item $inventory)
     {
         $inventory->load('transactions.user');
@@ -73,30 +42,6 @@ class InventoryController extends Controller
             'item' => $inventory,
             'transactions' => $transaction,
         ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 
     public function add()
@@ -133,6 +78,13 @@ class InventoryController extends Controller
         return redirect()->route('dashboard')->with('success', 'Stock added successfully.');
     }
 
+    public function deductStock(AddInventoryRequest $request)
+    {
+        $this->inventory->addStock($request->validated()['items']);
+
+        return redirect()->route('dashboard')->with('success', 'Stock added successfully.');
+    }
+
     public function deductStoreStock(DeductInventoryRequest $request)
     {
         $this->inventory->deductStock($request->validated()['items']);
@@ -140,9 +92,15 @@ class InventoryController extends Controller
         return redirect()->route('dashboard')->with('success', 'Stock deducted successfully.');
     }
 
-    public function addStore(StoreInventoryRequest $request): RedirectResponse
+    public function addStore(StoreAdditionRequest $request): RedirectResponse
     {
         $this->inventory->add($request->validated()['lines']);
         return back()->with('success', 'Items added successfully.');
     }
+
+    // public function deduct(StoreDeductionRequest $request): RedirectResponse
+    // {
+    //     $this->inventory->deduct($request->validated()['lines']);
+    //     return back()->with('success', 'Items deducted successfully.');
+    // }
 }

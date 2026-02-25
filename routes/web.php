@@ -26,13 +26,14 @@ Route::middleware(['auth', 'verified'])->group(
     function () {
         Route::get('/items', [ItemController::class, 'index'])->name('items.index');
         Route::get('/items/{item}', [ItemController::class, 'show'])->name('items.show');
-        Route::post('/items/store', [ItemController::class, 'storeItem'])->name('items.store');
-        Route::get('/inventory/create', [ItemController::class, 'addItem'])->name('items.add');
+        // Route::post('/items/store', [ItemController::class, 'storeItem'])->name('items.store');
 
+        Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory.index');
         Route::get('/inventory/add', [InventoryController::class, 'add'])->name('inventory.add');
         Route::post('/inventory/add/stock', [InventoryController::class, 'addStoreStock'])->name('inventory.add.stock');
         Route::get('/inventory/deduct', [InventoryController::class, 'deduct'])->name('inventory.deduct');
         Route::post('/inventory/deduct/stock', [InventoryController::class, 'deductStoreStock'])->name('inventory.deduct.stock');
+        Route::resource('inventory', InventoryController::class);
     }
 );
 
